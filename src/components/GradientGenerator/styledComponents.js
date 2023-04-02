@@ -15,15 +15,14 @@ export const MainHeading = styled.h1`
   color: #000000;
 `
 
-export const GradientDirectionItemsContainer = styled.div`
+export const GradientDirectionItemsContainer = styled.ul`
     display: flex:
     justify-content: space-between;
-    // align-items: center;
     min-width: 400px; 
-    padding: 10px
+    padding: 10px;
 `
 
-export const DirectionAndColorHeading = styled.h1`
+export const DirectionAndColorHeading = styled.p`
   color: #ededed;
   font-size: 28px;
   font-family: 'Roboto';
@@ -35,7 +34,7 @@ export const ColorPickerContainer = styled.div`
   margin-bottom: 30px;
 `
 
-export const ColorCode = styled.h1`
+export const ColorCode = styled.p`
   font-size: 20px;
   color: #ffffff;
 `
