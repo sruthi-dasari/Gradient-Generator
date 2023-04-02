@@ -35,6 +35,14 @@ class GradientGenerator extends Component {
     this.setState({directionValue: reqItem.value})
   }
 
+  onChangeFirstColor = event => {
+    this.setState({firstColorCode: event.target.value})
+  }
+
+  onChangeSecondColor = event => {
+    this.setState({secondColorCode: event.target.value})
+  }
+
   render() {
     const {directionValue, firstColorCode, secondColorCode} = this.state
     return (
@@ -42,6 +50,7 @@ class GradientGenerator extends Component {
         direction={directionValue}
         firstColorCode={firstColorCode}
         secondColorCode={secondColorCode}
+        data-testid="gradientGenerator"
       >
         <MainHeading>Generate a CSS Color Gradient</MainHeading>
         <DirectionAndColorHeading>Choose Direction</DirectionAndColorHeading>
@@ -57,11 +66,19 @@ class GradientGenerator extends Component {
         <ColorPickerContainer>
           <ColorContainer>
             <ColorCode>{firstColorCode}</ColorCode>
-            <ColorBox type="color" value={firstColorCode} />
+            <ColorBox
+              type="color"
+              value={firstColorCode}
+              onChange={this.onChangeFirstColor}
+            />
           </ColorContainer>
           <ColorContainer>
             <ColorCode>{secondColorCode}</ColorCode>
-            <ColorBox type="color" value={secondColorCode} />
+            <ColorBox
+              type="color"
+              value={secondColorCode}
+              onChange={this.onChangeSecondColor}
+            />
           </ColorContainer>
         </ColorPickerContainer>
         <GenerateButton type="button" className="generate-btn">
