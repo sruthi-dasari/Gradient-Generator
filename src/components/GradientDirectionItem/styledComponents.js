@@ -8,4 +8,9 @@ export const Button = styled.button`
   background-color: #ffffff79;
   font-weight: 500px;
   font-family: 'Roboto';
+  //   border: none;
+`
+
+export const ListItem = styled.li`
+  list-style: none;
 `
