@@ -43,6 +43,10 @@ class GradientGenerator extends Component {
     this.setState({secondColorCode: event.target.value})
   }
 
+  // onClickGenerate = () =>{
+  //     this.setState({updateBackground: })
+  // }
+
   render() {
     const {directionValue, firstColorCode, secondColorCode} = this.state
     return (
@@ -81,6 +85,7 @@ class GradientGenerator extends Component {
             />
           </ColorContainer>
         </ColorPickerContainer>
+        {/* // onClick = {this.onClickGenerate} */}
         <GenerateButton type="button" className="generate-btn">
           Generate
         </GenerateButton>
