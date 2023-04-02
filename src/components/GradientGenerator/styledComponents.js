@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const GradientBox = styled.div`
-background-image: linear-gradient(to left, #8ae323, #014f7b)
+  background-image: linear-gradient(to left, #8ae323, #014f7b)
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -12,12 +12,15 @@ background-image: linear-gradient(to left, #8ae323, #014f7b)
 export const MainHeading = styled.h1`
   font-family: 'Roboto';
   font-size: 20px;
-  color: #ffffff;
+  color: #000000;
 `
 
 export const GradientDirectionItemsContainer = styled.div`
     display: flex:
-    align-items: center;
+    justify-content: space-between;
+    // align-items: center;
+    min-width: 400px; 
+    padding: 10px
 `
 
 export const DirectionAndColorHeading = styled.h1`
