@@ -1,4 +1,4 @@
-import {Button} from './styledComponents'
+import {Button, ListItem} from './styledComponents'
 
 const GradientDirectionItem = props => {
   const {updateDirection, itemDetails} = props
@@ -10,7 +10,7 @@ const GradientDirectionItem = props => {
 
   return (
     <Button onClick={onClickButton} value={value}>
-      {displayText}
+      <ListItem>{displayText}</ListItem>
     </Button>
   )
 }
