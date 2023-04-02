@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const GradientBox = styled.div`
+background-image: linear-gradient(to left, #8ae323, #014f7b)
   padding: 20px;
   display: flex;
   flex-direction: column;
