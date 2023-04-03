@@ -18,6 +18,6 @@ export const ListItem = styled.li`
   border-radius: 7px;
 //   background-color: ${props => (props.isActive ? '#ffffff' : '#ffffff79')};
   background-color: #ffffff;
-  opacity: ${props => (props.isActive ? '1' : '0.5')}
+  opacity: ${props => (props.isActive ? 1 : 0.5)}
   margin: 0px;
 `
