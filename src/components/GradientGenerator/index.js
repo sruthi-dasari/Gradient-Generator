@@ -26,13 +26,15 @@ class GradientGenerator extends Component {
     directionValue: 'top',
     firstColorCode: '#8ae323',
     secondColorCode: '#014f7b',
+    backgroundImageValues: `linear-gradient(to top, #8ae323, #014f7b)`,
+    activeId: 'TOP',
   }
 
   updateDirection = id => {
     const reqItem = gradientDirectionsList.find(
       eachItem => eachItem.directionId === id,
     )
-    this.setState({directionValue: reqItem.value})
+    this.setState({directionValue: reqItem.value, activeId: id})
   }
 
   onChangeFirstColor = event => {
@@ -43,17 +45,28 @@ class GradientGenerator extends Component {
     this.setState({secondColorCode: event.target.value})
   }
 
-  // onClickGenerate = () =>{
-  //     this.setState({updateBackground: })
-  // }
+  onClickGenerate = () => {
+    const {firstColorCode, secondColorCode, directionValue} = this.state
+    this.setState({
+      backgroundImageValues: `linear-gradient(to ${directionValue}, ${firstColorCode},${secondColorCode})`,
+    })
+  }
 
   render() {
-    const {directionValue, firstColorCode, secondColorCode} = this.state
+    const {
+      directionValue,
+      firstColorCode,
+      secondColorCode,
+      backgroundImageValues,
+      activeId,
+    } = this.state
+    console.log(backgroundImageValues)
     return (
       <GradientBox
         direction={directionValue}
         firstColorCode={firstColorCode}
         secondColorCode={secondColorCode}
+        backgroundImageValues={backgroundImageValues}
         data-testid="gradientGenerator"
       >
         <MainHeading>Generate a CSS Color Gradient</MainHeading>
@@ -62,7 +75,9 @@ class GradientGenerator extends Component {
           {gradientDirectionsList.map(eachItem => (
             <GradientDirectionItem
               itemDetails={eachItem}
+              updateDirection={this.updateDirection}
               key={eachItem.directionId}
+              isActive={eachItem.directionId === activeId}
             />
           ))}
         </GradientDirectionItemsContainer>
@@ -85,8 +100,12 @@ class GradientGenerator extends Component {
             />
           </ColorContainer>
         </ColorPickerContainer>
-        {/* // onClick = {this.onClickGenerate} */}
-        <GenerateButton type="button" className="generate-btn">
+
+        <GenerateButton
+          type="button"
+          className="generate-btn"
+          onClick={this.onClickGenerate}
+        >
           Generate
         </GenerateButton>
       </GradientBox>
